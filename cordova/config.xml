@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget
+	id='wog.magic.app'
+	version='0.1.0'
+	xmlns='http://www.w3.org/ns/widgets'
+	xmlns:cdv='http://cordova.apache.org/ns/1.0'>
+	<name>Wog Magic</name>
+	<description>
+		Wog Magic is the best!
+	</description>
+	<author email='wogcarver@gmail.com'>
+		Warren S. Carver
+	</author>
+</widget>
