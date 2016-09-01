@@ -11,4 +11,5 @@
 	<author email='wogcarver@gmail.com'>
 		Warren S. Carver
 	</author>
+	<plugin name='cocoon-plugin-multiplayer-android-googleplaygames' version='1.0.1' />
 </widget>

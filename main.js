@@ -1,9 +1,9 @@
 // Calculates data needed for screen drawing
-var fieldData = require('./js/wog/fieldData.js');
+var fieldData = require('./src/wog/fieldData.js');
 // Handles drawing and user input in the spell casting area
-var spellCasting = require('./js/wog/spellCasting.js');
+var spellCasting = require('./src/wog/spellCasting.js');
 // Handles creating and adding text to the spell field area
-var spellField = require('./js/wog/spellField.js');
+var spellField = require('./src/wog/spellField.js');
 
 var page = new tabris.Page({
 	topLevel: true,
