@@ -1,10 +1,10 @@
 // Private ------------------------------------------------------------------------------------
 
-var _ = require('../libs/underscore');
+var _ = require('../../libs/underscore');
 var _page;
-var Point = require('./Point.js');
+var Point = require('../Point.js');
 var spellField = require('./spellField.js');
-var spells = require('../libs/spellAPI.js');
+var spells = require('../../libs/spellAPI.js');
 
 var canvasBox;
 var canvasPath;

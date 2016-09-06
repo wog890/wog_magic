@@ -1,9 +1,9 @@
 // Private ------------------------------------------------------------------------------------
 
-var _ = require('../libs/underscore');
+var _ = require('../../libs/underscore');
 var _page;
-var Point = require('./Point.js');
-var spells = require('../libs/spellAPI.js');
+var Point = require('../Point.js');
+var spells = require('../../libs/spellAPI.js');
 
 var scrollView;
 
