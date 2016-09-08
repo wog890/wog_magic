@@ -12,6 +12,8 @@ var page = new tabris.Page({
 var _public = {};
 
 _public.open = function() {
+  Cocoon.Social.Facebook.getSocialInterface();
+  console.log(JSON.stringify(Cocoon.Social.Facebook));
   page.open();
 };
 

@@ -12,14 +12,14 @@
 		Warren S. Carver
 	</author>
 
-	<plugin name='cocoon-plugin-common' version='1.0.2' />
+	<plugin name='cocoon-plugin-common' />
 
-	<plugin name='cocoon-plugin-multiplayer-common' version='1.0.1' />
-	<plugin name='cocoon-plugin-multiplayer-android-common' version='1.0.0' />
-	<plugin name='cocoon-plugin-multiplayer-android-googleplaygames' version='1.0.1' />
+	<plugin name='cocoon-plugin-multiplayer-common' />
+	<plugin name='cocoon-plugin-multiplayer-android-common' />
+	<plugin name='cocoon-plugin-multiplayer-android-googleplaygames' />
 
-	<plugin name='cocoon-plugin-social-common' version='1.0.1' />
-	<plugin name='cocoon-plugin-social-android-facebook' version='1.1.4' />
-	<plugin name='cocoon-plugin-social-android-googleplaygames' version='1.1.4' />
+	<plugin name='cocoon-plugin-social-common' />
+	<plugin name='cocoon-plugin-social-android-facebook' />
+	<plugin name='cocoon-plugin-social-android-googleplaygames' />
 
 </widget>
