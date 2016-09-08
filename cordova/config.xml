@@ -18,6 +18,7 @@
 	<plugin name='cocoon-plugin-multiplayer-android-common' />
 	<plugin name='cocoon-plugin-multiplayer-android-googleplaygames' />
 
+	<!-- This is a proof for Katelyn -->
 	<plugin name='cocoon-plugin-social-common' />
 	<plugin name='cocoon-plugin-social-android-facebook' />
 	<plugin name='cocoon-plugin-social-android-googleplaygames' />
