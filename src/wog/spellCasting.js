@@ -1,10 +1,9 @@
 // Private ------------------------------------------------------------------------------------
 
-var _ = require('../../libs/underscore');
-var _page;
-var Point = require('../Point.js');
+var _ = require('../libs/underscore');
+var Point = require('./Point.js');
 var spellField = require('./spellField.js');
-var spells = require('../../libs/spellAPI.js');
+var spells = require('../libs/spellAPI.js');
 
 var canvasBox;
 var canvasPath;
@@ -30,7 +29,10 @@ function castSpell() {
       spellField.addInformation('Your spell failed to do anything', '#DE1616');
     }
     manaBar.set('selection', 0);
-    restoreManaBar(10, 10);
+    restoreManaBar(30, 10);
+  }
+  else if (manaBar.get('selection') < 100) {
+    spellField.addInformation('You mana has not refilled', '#DE1616');
   }
   pattern = [];
   prevPointerPos = null;
@@ -176,13 +178,14 @@ var _public = {};
 /*  drawCastingArea(castingArea)
     Creates the area the user draws spells in.
     - castingArea (object): Required device data for drawing the screen.
+    - page (tabris.Page): Required page for casting area to be added to.
     - arcColor (hex): Color of the center circle and rectangle border.
     - circleColor (hex): Color of the center circle background.
     - pinColor (hex): Color of the pins.
     - rectColor (hex): Color of rectangle background.
     - pinWidth (int): Line width of the pins, circle border, and rectangle border.
 */
-_public.drawCastingArea = function(castingArea, arcColor, circleColor, pinColor, rectColor, pinWidth) {
+_public.drawCastingArea = function(castingArea, page, arcColor, circleColor, pinColor, rectColor, pinWidth) {
   var graphics;
 
   function drawPins() {
@@ -242,23 +245,19 @@ _public.drawCastingArea = function(castingArea, arcColor, circleColor, pinColor,
     if (!castingError) {
       castSpell();
     }
-  }).appendTo(_page);
+  }).appendTo(page);
 
   _canvasPath = new tabris.Canvas({
     layoutData: {left: 0, top: 0, right: 0, bottom: 0}
   }).on('change:bounds', function(canvas, bounds) {
     castingPath = canvas.getContext('2d', bounds.width, bounds.height);
-  }).appendTo(_page);
+  }).appendTo(page);
 
   manaBar = new tabris.ProgressBar({
     textColor: '#16DEDE',
     layoutData: {right: 10},
     selection: 100
-  }).appendTo(_page);
-};
-
-_public.setPage = function(page) {
-  _page = page;
+  }).appendTo(page);
 };
 
 module.exports = _public;

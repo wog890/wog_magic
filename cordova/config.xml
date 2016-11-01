@@ -12,15 +12,4 @@
 		Warren S. Carver
 	</author>
 
-	<plugin name='cocoon-plugin-common' />
-
-	<plugin name='cocoon-plugin-multiplayer-common' />
-	<plugin name='cocoon-plugin-multiplayer-android-common' />
-	<plugin name='cocoon-plugin-multiplayer-android-googleplaygames' />
-
-	<!-- This is a proof for Katelyn -->
-	<plugin name='cocoon-plugin-social-common' />
-	<plugin name='cocoon-plugin-social-android-facebook' />
-	<plugin name='cocoon-plugin-social-android-googleplaygames' />
-
 </widget>
