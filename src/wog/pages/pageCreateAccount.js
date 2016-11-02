@@ -9,7 +9,7 @@ var websocket = require('../../libs/websocket');
 var page = new tabris.Page({
 	background: '#73068F',
 	title: 'Create Account',
-	topLevel: false
+	topLevel: true
 });
 
 var createContainer = new tabris.Composite({
@@ -81,7 +81,8 @@ function createAccount() {
 			reason: 'CreateAccount',
 			username: inpUsername.get('text')
 		}
-		console.log(websocket.myWogVar);
+		console.log(websocket);
+		/*console.log(websocket.myWogVar);*/
 		/*websocket.sendJSON(message);*/
 	}
 }
