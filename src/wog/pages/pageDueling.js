@@ -4,7 +4,6 @@ var _ = require('../../libs/underscore');
 var fieldData = require('../fieldData.js');
 var spellCasting = require('../spellCasting.js');
 var spellField = require('../spellField.js');
-/*var websocket = require('../websocket.js');*/
 
 var page = new tabris.Page({
   background: '#AAAAAA',

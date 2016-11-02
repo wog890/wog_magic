@@ -5,6 +5,7 @@ function init() {
 	tabris.ui.set('displayMode', 'fullscreen');
 	tabris.ui.set('toolbarVisible', false);
 	pageLogo.open();
+	console.log(typeof websocket.myWogVar);
 	websocket.init();
 }
 

@@ -81,6 +81,8 @@ function createAccount() {
 			reason: 'CreateAccount',
 			username: inpUsername.get('text')
 		}
+		console.log(websocket.myWogVar);
+		/*websocket.sendJSON(message);*/
 	}
 }
 
