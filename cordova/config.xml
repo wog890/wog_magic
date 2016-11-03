@@ -12,4 +12,6 @@
 		Warren S. Carver
 	</author>
 
+	<plugin name='cordova-plugin-firebase' spec='0.1.18' />
+
 </widget>

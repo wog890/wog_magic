@@ -1,45 +1,45 @@
 // Private ------------------------------------------------------------------------------------
 
-var _ = require('./underscore.js');
+var _isOpen = false;
+var _public = {};
 var _webSocket;
 
-var pageLogin = require('../wog/pages/pageLogin');
-var isOpen = false;
-
-function checkConnection() {
+function _checkConnection() {
 	var networkState = navigator.connection.type;
 	if (networkState === Connection.UNKNOWN || networkState === Connection.NONE) {
 		return false;
 	}
 	return true;
-};
+}
+
+function _connectionMessage(event) {
+
+}
 
 // Public -------------------------------------------------------------------------------------
 
-var _public = {};
-_public.myWogVar = true;
-_public.checkConnection = checkConnection;
+_public.checkConnection = _checkConnection;
 
 _public.init = function() {
-	if (checkConnection) {
-		_webSocket = new WebSocket('ws://wog-magic-alpha-225034.nitrousapp.com:8080', 'echo-protocol');
-		_webSocket.onclose = function(event) {
-			isOpen = false;
-			navigator.notification.alert('Client failed to connect to server!', function(){}, 'Error');
-			console.log((new Date()) + ' Client disconnected from server');
+	return new Promise(function(resolve, reject) {
+		if (_checkConnection()) {
+			_webSocket = new WebSocket('ws://wog-magic-alpha-225034.nitrousapp.com:8080', 'echo-protocol');
+			_webSocket.onclose = function(event) {
+				_isOpen = false;
+				console.log((new Date()) + ' Client disconnected from server');
+				reject(Error('WebSocket Error'));
+			}
+			_webSocket.onmessage = _connectionMessage;
+			_webSocket.onopen = function(event) {
+				_isOpen = true;
+				console.log((new Date()) + ' Client connected to server');
+				resolve();
+			}
 		}
-		_webSocket.onmessage = function(event) {
-
+		else {
+			reject(Error('Network Error'));
 		}
-		_webSocket.onopen = function(event) {
-			isOpen = true;
-			console.log((new Date()) + ' Client connected to server');
-			pageLogin.open();
-		}
-	}
-	else {
-
-	}
+	});
 };
 
 _public.send = function(message) {

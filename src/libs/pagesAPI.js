@@ -1,36 +1,32 @@
 // Private ------------------------------------------------------------------------------------
 
 var _ = require('./underscore');
-var PATH = '../wog/pages/';
-
-var pages = {
-	pageCreateAccount: new Page('pageCreateAccount'),
-	pageDueling: new Page('pageDueling'),
-	pageLogin: new Page('pageLogin'),
-	pageLogo: new Page('pageLogo')
-};
-
-function Page(id) {
-	this.id = id;
-	this.page = require(PATH + id + '.js');
-	this.close = function() {
-		this.page.close();
-	}
-	this.open = function() {
-		this.page.open();
-	}
-}
+var _history = [];
+var _pages;
+var _public = {};
 
 // Public -------------------------------------------------------------------------------------
 
-var _public = {};
+_public.back = function() {
+	var pageId = _.last(_history);
+	_history.slice(-1, 1);
+	_pages[pageId].open();
+}
 
 _public.close = function(pageId) {
-	pages[pageId].close(prop);
+	_pages[pageId].close();
 };
 
-_public.open = function(pageId) {
-	pages[pageId].open();
+_public.init = function(pages) {
+	_pages = pages;
+};
+
+_public.open = function(pageId, canNavigateBack) {
+	if (!canNavigateBack) {
+		_history = [];
+	}
+	_history.push(pageId);
+	_pages[pageId].open();
 };
 
 module.exports = _public;

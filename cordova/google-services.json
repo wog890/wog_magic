@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "653545847498",
+    "firebase_url": "https://wog-magic.firebaseio.com",
+    "project_id": "wog-magic",
+    "storage_bucket": "wog-magic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653545847498:android:35a90a92df366864",
+        "android_client_info": {
+          "package_name": "com.wogmagic.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653545847498-9tck8ftbssgc8c9fg4echmol1btdbiqq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP704ELDH194O6bSuu4Xu65yUhD6v6Hvc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
